@@ -1,0 +1,84 @@
+{
+  "name": "app-name",
+  "version": "0.1.0",
+  "author": "Junior Alves <jjalves96@gmail.com>",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "jest",
+    "typecheck": "tsc --project tsconfig.json --noEmit",
+    "lint": "eslint src --max-warnings=0",
+    "postinstall": "husky install",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "test:watch": "yarn test --watch",
+    "generate": "yarn plop --plopfile generators/plopfile.js",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*": [
+      "yarn lint --fix",
+      "yarn test --findRelatedTests --bail"
+    ]
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "cors": "^2.8.5",
+    "eslint-config-next": "^15.1.4",
+    "next": "^13.5.6",
+    "next-connect": "^1.0.0",
+    "next-pwa": "^5.5.5",
+    "polished": "^4.3.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-hook-form": "^7.54.2",
+    "react-icons": "^5.4.0",
+    "styled-components": "5.3.11"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^9.0.0",
+    "@storybook/addon-essentials": "8.1.11",
+    "@storybook/builder-webpack5": "^8.1.11",
+    "@storybook/manager-webpack5": "^6.5.16",
+    "@storybook/react": "6.4.22",
+    "@swc/core": "^1.10.7",
+    "@swc/jest": "^0.2.37",
+    "@testing-library/cypress": "^10.0.2",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^15.0.7",
+    "@types/cors": "^2.8.17",
+    "@types/jest": "^27.5.0",
+    "@types/node": "^22.10.7",
+    "@types/react": "^18.3.13",
+    "@types/styled-components": "^5.1.26",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/parser": "^5.62.0",
+    "cypress": "^13.17.0",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-cypress": "^3.6.0",
+    "eslint-plugin-import-helpers": "^2.0.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "husky": "9",
+    "jest": "^27.5.1",
+    "jest-styled-components": "^7.2.0",
+    "lint-staged": "^15.4.1",
+    "plop": "^4.0.1",
+    "prettier": "^2.8.8",
+    "storybook-addon-next": "^1.8.0",
+    "storybook-addon-next-router": "^4.0.2",
+    "ts-jest": "^27.1.4",
+    "typescript": "^4.9.5",
+    "webpack": "5.97.1"
+  }
+}
